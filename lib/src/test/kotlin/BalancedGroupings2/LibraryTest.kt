@@ -28,4 +28,8 @@ class BalancedGroupingsTest {
     @Test fun MultipleGroupingsTest() {
         assertEquals(true, classUnderTest.isBalanced("{ -b + sqrt(b^2 + 4ac)/(2a) }"))
     }
+
+    @Test fun MultipleUnmatchedGroupingsTest() {
+        assertEquals(false, classUnderTest.isBalanced("{ -b + sqrt(b^2 + 4ac}/[2a] "))
+    }
 }

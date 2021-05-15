@@ -3,8 +3,25 @@
  */
 package BalancedGroupings2
 
+import java.util.ArrayDeque
+
 class BalancedGroupingsProblem {
     fun isBalanced(sequence: String): Boolean {
-        return true 
+        val stack = ArrayDeque<Char>()
+
+        for (c in sequence) {
+            if (c == '(' || c == '[' || c == '{')
+                stack.push(c)
+            else if (c == ')' || c == ']' || c == '}') {
+                if (stack.size == 0)
+                    return false
+            }
+
+        }
+
+        if (stack.size > 0)
+            return false
+        else 
+            return true 
     }
 }

@@ -7,8 +7,15 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class BalancedGroupingsTest {
+    val classUnderTest = BalancedGroupingsProblem()
+
     @Test fun EmptyStringTest() {
-        val classUnderTest = BalancedGroupingsProblem()
         assertEquals(true, classUnderTest.isBalanced(""))
     }
+
+    @Test fun UnmatchedPairingsTest() {
+        assertEquals(false, classUnderTest.isBalanced("Today is kind of rainy (the weather was better yesterday"))
+    }
+
+    
 }

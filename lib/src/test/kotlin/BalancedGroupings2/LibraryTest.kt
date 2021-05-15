@@ -24,4 +24,8 @@ class BalancedGroupingsTest {
     @Test fun MatchedPairingTest() {
         assertEquals(true, classUnderTest.isBalanced(" {a + b} "))
     }
+
+    @Test fun MultipleGroupingsTest() {
+        assertEquals(true, classUnderTest.isBalanced("{ -b + sqrt(b^2 + 4ac)/(2a) }"))
+    }
 }

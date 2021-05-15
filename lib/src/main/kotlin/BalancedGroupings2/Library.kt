@@ -15,6 +15,10 @@ class BalancedGroupingsProblem {
             else if (c == ')' || c == ']' || c == '}') {
                 if (stack.size == 0)
                     return false
+                else {
+                    if (!isPairingMatched(stack.pop(), c))
+                        return false
+                }
             }
 
         }
@@ -23,5 +27,16 @@ class BalancedGroupingsProblem {
             return false
         else 
             return true 
+    }
+
+    private fun isPairingMatched(a: Char, b: Char): Boolean {
+        if (a == '(' && b == ')')
+            return true
+        else if (a == '[' && b == ']')
+            return true
+        else if (a == '{' && b == '}')
+            return true
+        else 
+            return false
     }
 }

@@ -17,5 +17,11 @@ class BalancedGroupingsTest {
         assertEquals(false, classUnderTest.isBalanced("Today is kind of rainy (the weather was better yesterday"))
     }
 
-    
+    @Test fun UnmatchedPairingsTestTwo() {
+        assertEquals(false, classUnderTest.isBalanced("Today is kind of rainy )the weather was better yesterday"))
+    }
+
+    @Test fun MatchedPairingTest() {
+        assertEquals(true, classUnderTest.isBalanced(" {a + b} "))
+    }
 }
